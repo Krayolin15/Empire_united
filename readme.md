@@ -1,10 +1,12 @@
 ​⚽ Empire United Soccer Club Website
+
 ​A professional, responsive website developed for Empire United, a local soccer club. The project was designed to establish an online presence for the club, showcasing their team, mission, and contact information to fans and prospective players.
 
 ​🔗[Live Demo] https://krayolin15.github.io/Empire_united/#home
 
 ​🚀 Features
-​Fully Responsive Design: Optimized for mobile, tablet, and desktop viewing.
+​Fully Responsive Design:
+Optimized for mobile, tablet, and desktop viewing.
 ​Dynamic Navigation: A smooth, single-page scrolling experience using CSS and JavaScript.
 ​Team Showcase: Dedicated sections to highlight club members and achievements.
 ​Contact Integration: Clear call-to-actions and contact information for community engagement.
