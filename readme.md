@@ -16,6 +16,7 @@ Optimized for mobile, tablet, and desktop viewing.
 ​CSS3: Styled the interface with custom animations and a mobile-first approach.
 ​JavaScript (ES6): Handled interactive elements and navigation logic.
 ​GitHub Pages: Used for hosting and deployment.
+
 ​📂 Project Structure
 
 ├── index.html          # Main landing page
