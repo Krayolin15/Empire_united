@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;900&display=swap');
+
+:root {
+    --gold: #D4AF37;
+    --black: #050505;
+    --text: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
+
+body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* CURSOR */
+#custom-cursor {
+    position: fixed;
+    width: 20px; height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* LOADER */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader-text { font-family: 'Syncopate'; font-size: 4vw; letter-spacing: 20px; color: var(--gold); }
+.loader-line { width: 0%; height: 2px; background: var(--gold); margin-top: 10px; }
+
+/* NAV */
+.magical-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 500;
+}
+.logo { height: 60px; pointer-events: auto; }
+.menu-links a {
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    display: inline-block;
+}
+
+/* HERO */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero-logo { width: 15vw; margin-bottom: 2rem; }
+h1 { font-family: 'Syncopate'; font-size: 8vw; line-height: 1; }
+
+/* SECTIONS */
+.section { padding: 10vh 5%; min-height: 100vh; }
+.section-title h2 { font-size: 5vw; font-family: 'Syncopate'; color: var(--gold); }
+.line { width: 100px; height: 4px; background: var(--gold); margin: 20px 0; }
+
+/* GALLERY GRID */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.item {
+    height: 400px;
+    background: #111;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: box-shadow 0.5s;
+}
+.item img, .item video { width: 100%; height: 100%; object-fit: cover; }
+
+.item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.4s;
+}
+.item:hover .item-overlay { opacity: 1; }
+.item:hover { box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
+
+/* STAFF */
+.staff-flex { display: flex; gap: 30px; margin-top: 50px; }
+.staff-card {
+    flex: 1;
+    background: #111;
+    padding: 40px;
+    border: 1px solid #222;
+}
+.staff-card h3 { color: var(--gold); margin-bottom: 10px; }
+
+/* MAP */
+.location-card { background: #111; display: grid; grid-template-columns: 2fr 1fr; align-items: center; }
+.location-text { padding: 40px; }
+
+.pillars-section {
+    transition: background 0.8s ease;
+    position: relative;
+}
+
+.pillars-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    height: 60vh;
+}
+
+.pillar-box {
+    flex: 1;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    overflow: hidden;
+    transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillar-box:hover {
+    flex: 1.5;
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--gold);
+}
+
+.pillar-num {
+    display: block;
+    font-family: 'Syncopate';
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.pillar-content h3 {
+    font-family: 'Syncopate';
+    font-size: 2.5vw;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.pillar-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #888;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.pillar-glow {
+    position: absolute;
+    width: 100px; height: 100px;
+    background: var(--gold);
+    filter: blur(80px);
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.pillar-box:hover .pillar-glow {
+    opacity: 0.2;
+}
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* For Tablets (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    }
+    
+    .pillars-container {
+        height: auto; /* Allow content to dictate height */
+        flex-direction: column;
+    }
+
+    .pillar-box {
+        padding: 60px 20px;
+    }
+
+    .location-card {
+        grid-template-columns: 1fr; /* Stack map and text */
+    }
+}
+
+/* For Mobile Phones (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .magical-nav {
+        padding: 1rem 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-links {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .menu-links a {
+        margin: 0 10px;
+        font-size: 0.7rem;
+    }
+
+    /* Hero Section */
+    h1 {
+        font-size: 12vw; /* Larger font for small screens */
+    }
+
+    .hero-logo {
+        width: 40vw; /* Larger logo on mobile */
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .item {
+        height: 300px; /* Shorter cards for scrolling ease */
+    }
+
+    /* Pillars */
+    .pillar-content h3 {
+        font-size: 8vw;
+    }
+
+    /* Hide custom cursor on touch devices (it feels laggy) */
+    #custom-cursor {
+        display: none;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+
+    .section-title h2 {
+        font-size: 10vw;
+    }
+}
+
+/* Accessibility: Support for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
