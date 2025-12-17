@@ -17,9 +17,12 @@ Optimized for mobile, tablet, and desktop viewing.
 ​JavaScript (ES6): Handled interactive elements and navigation logic.
 ​GitHub Pages: Used for hosting and deployment.
 ​📂 Project Structure
+
 ├── index.html          # Main landing page
+
 ├── css/
 │   └── style.css       # Custom styling and layout
+
 ├── js/
 │   └── script.js      # Navigation and interactive logic
 └── assets/             # Images, icons, and branding materials
